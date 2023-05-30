@@ -79,6 +79,26 @@ input[type="number" i] {
     height: 30px;
 }
 
+#invalidBound, #invalidGrade {
+    color: red;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    display:inline-block;
+}
+
+#invalidBound {
+    position: relative;
+    top: -720px;
+}
+
+#invalidGrade {
+    position: relative;
+    clear:left;
+    top: 20px;
+    right: 70px;
+    width: 200px;
+}
+
 .bars{
     background-color: indigo;
     height: 15px;

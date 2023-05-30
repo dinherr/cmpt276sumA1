@@ -120,16 +120,18 @@ function newGradeInput(event){
     if (event.key == "Enter"){
         event.preventDefault();
         var gradePush = document.getElementById('newGrade').value;
+        document.getElementById('invalidGrade').innerHTML = '';
         
         if (gradePush == ""){
-            window.alert("Please input a value.");
+            document.getElementById('invalidGrade').innerHTML = "Please input a grade.";
             return -1;
         }
         
         gradePush = parseFloat(gradePush);
 
         if (gradePush > bounds[0].value || gradePush < bounds[11].value){
-            window.alert("Please input a value between " + bounds[11].value + "and " + bounds[0].value);
+            document.getElementById('invalidGrade').innerHTML = "Please input a value between " + bounds[11].value
+             + " and " + bounds[0].value;
             return -1;
         }
         else{
@@ -168,22 +170,24 @@ function barChart(){
 function updateBounds(event){
     if (event.key == "Enter"){
         event.preventDefault();
+        document.getElementById('invalidBound').innerHTML = ""
         var newBounds = document.getElementsByName('bounds');
         var counter = 0;
         var updating = 1;    
 
         if (bounds[11].valueAsNumber < 0){
-            window.alert("Minimum bound is 0.")
+            document.getElementById('invalidBound').innerHTML = "Minimum bound is 0."
             return 0;
         }
         if (bounds[0].valueAsNumber > 200.00){
-            window.alert("Maximum bound is 200.")
+            document.getElementById('invalidBound').innerHTML = "Maximum bound is 200."
             return 0;
         }
 
         while (counter < 11){
             if (newBounds[counter].valueAsNumber < newBounds[counter+1].valueAsNumber){
-                window.alert("Bounds overlapping. " + newBounds[counter].value + " smaller than the next bound.");
+                document.getElementById('invalidBound').innerHTML = ("Bounds overlapping. " + newBounds[counter].value
+                 + " smaller than the next bound.");
                 updating = 0;
                 break;
             }
