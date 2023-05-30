@@ -1,0 +1,94 @@
+h1 {
+    margin: 10px;
+    padding-bottom: 20px;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+h2 {
+    padding-bottom: 20px;
+    color:rgb(190, 24, 63);
+    margin: 1px;
+    position: relative;
+    top: -15px;
+    right: 35px;
+
+}
+
+.scales, .chart{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(230, 237, 237);
+    margin: 10px;
+    padding: 35px 30px 60px 55px;
+    float: left;
+}
+
+.scales{
+    height: 720px;
+    width: 400px;
+}
+.chart {
+    height: 400px;
+    width: 400px;
+}
+
+.input {
+    font-size: 14pt;
+    background-color: rgb(230, 237, 237);
+    margin: 10px;
+    width: 440px;
+    height: 190px;
+    padding: 10px 30px 100px 15px;
+    clear:left;
+    position: relative;
+    top: -310px;
+    left: 505px;
+}
+
+p{
+    position: relative;
+    right: 15px;
+    margin: 20px;
+    display: inline-block;
+    clear:left;
+    text-align: left;
+    width: 30%;
+}
+
+.inputLimit, #newGrade{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    text-align: right;
+    display:inline-block;
+    position: relative;
+}
+
+.inputLimit {
+    top: 5px;
+    width: 90px;
+    height: 35px; 
+}
+
+input[type="number" i] {
+    padding: 1px 10px 1px 1px ;
+}
+
+#newGrade {
+    top: -30px;
+    left: 95px;
+    width: 175px;
+    height: 30px;
+}
+
+.bars{
+    background-color: indigo;
+    height: 15px;
+    width: 1px;
+    position:relative;
+    top: -15px;
+    left: 200px;
+}
+
+/*#barz{
+    background-color:rgb(230, 237, 237);
+    width: 50%
+}*/

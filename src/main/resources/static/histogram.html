@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram Generator</title>
+    <link rel="stylesheet" href="/css/histogram.css">
+    <script src="/js/calculate.js" defer></script>
+</head> 
+<body>
+    <h1>Histogram Generator</h1>
+    <main id="main">
+        
+        <section class="scales">
+            <h2>Lower bounds</h2>
+            <div>
+                <p > Max </p> <input type="number" name="bounds" class="inputLimit" value="100.00"> 
+                <p> A+ </p> <input type="number" name="bounds" class="inputLimit" value="95.00">
+                <p> A </p> <input type="number" name="bounds" class="inputLimit" value="90.00">
+                <p> A- </p> <input type="number" name="bounds" class="inputLimit" value="85.00">
+                <p> B+ </p> <input type="number" name="bounds" class="inputLimit" value="80.00">
+                <p> B </p> <input type="number" name="bounds" class="inputLimit" value="75.00">
+                <p> B- </p> <input type="number" name="bounds" class="inputLimit" value="70.00">
+                <p> C+ </p> <input type="number" name="bounds" class="inputLimit" value="65.00">
+                <p> C </p> <input type="number" name="bounds" class="inputLimit" value="60.00">
+                <p> C- </p> <input type="number" name="bounds" class="inputLimit" value="55.00">
+                <p> D </p> <input type="number" name="bounds" class="inputLimit" value="50.00">
+                <p> F </p> <input type="number" name="bounds" class="inputLimit" value="0.00">
+            </div>
+        </section>
+             
+        <section class="chart">
+            <h2>Histogram</h2>
+                <label> A+ </label> <div class="bars" ></div>
+                <label> A </label> <div class="bars"></div>
+                <label> A- </label> <div class="bars"></div>
+                <label> B+  </label> <div class="bars"></div>
+                <label> B  </label> <div class="bars"></div>
+                <label> B- </label> <div class="bars"></div>
+                <label> C+ </label> <div class="bars"></div>
+                <label> C  </label> <div class="bars"></div>
+                <label> C-  </label> <div class="bars"></div>
+                <label> D </label> <div class="bars"></div>
+                <label> F </label> <div class="bars"></div>
+        </section>
+
+        <script>
+           function barChart(){
+                var chooseBar = document.getElementsByClassName("bars");
+                var movement = setInterval(move, 10);
+                var counter = 0;
+                var width = 1;
+                function move(){
+                    for (const prop in stats){
+                        width = 1;
+                        if(stats.hasOwnProperty(prop)){
+                            if (counter > 10){
+                                clearInterval(movement);
+                            }
+                            else {
+                                width = stats[prop] * 5;
+                                chooseBar[counter].style.width = width + '%';
+                                console.log("");
+                            } 
+                        }
+                    counter++;    
+                    }
+                }
+            }
+        </script>
+        
+        <section class="input">
+            <p>New Grade: <input type="number" id = "newGrade"></p>
+        </section>
+            
+    </main>
+</body>
+</html>
