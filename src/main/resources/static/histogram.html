@@ -28,8 +28,8 @@
                 <p> D </p> <input type="number" name="bounds" class="inputLimit" value="50.00">
                 <p> F </p> <input type="number" name="bounds" class="inputLimit" value="0.00">
             </div>
-        </section>
-             
+        </section>    
+         
         <section class="chart">
             <h2>Histogram</h2>
                 <label> A+ </label> <div class="bars" ></div>
@@ -44,31 +44,6 @@
                 <label> D </label> <div class="bars"></div>
                 <label> F </label> <div class="bars"></div>
         </section>
-
-        <script>
-           function barChart(){
-                var chooseBar = document.getElementsByClassName("bars");
-                var movement = setInterval(move, 10);
-                var counter = 0;
-                var width = 1;
-                function move(){
-                    for (const prop in stats){
-                        width = 1;
-                        if(stats.hasOwnProperty(prop)){
-                            if (counter > 10){
-                                clearInterval(movement);
-                            }
-                            else {
-                                width = stats[prop] * 5;
-                                chooseBar[counter].style.width = width + '%';
-                                console.log("");
-                            } 
-                        }
-                    counter++;    
-                    }
-                }
-            }
-        </script>
         
         <section class="input">
             <p>New Grade: <input type="number" id = "newGrade"></p>
